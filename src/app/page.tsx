@@ -13,12 +13,12 @@ const Home = async () => {
     const geojson_data: any = geojson_res.data;
 
     return(
-        <div className="flex items-start relative">
-            <div className="hidden xl:block w-1/4 h-screen absolute left-0 top-0 z-[9999]">
+        <div className="flex items-start relative justify-between">
+            <div className="hidden xl:block w-1/4 h-screen absolute left-0 top-0">
                 <DesktopMenu />
             </div>
-            <div className="h-screen w-full overflow-x-hidden">
-                <Map geojsonData={geojson_data} />
+            <div className="h-screen w-3/4 overflow-x-hidden absolute right-0 top-0">
+                <Map geojsonData={geojson_data} corruptionData={corruption_data} />
             </div>
         </div>
     )
