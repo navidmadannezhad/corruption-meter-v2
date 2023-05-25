@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import "@styles/globals.css"
+import 'leaflet/dist/leaflet.css';
 
 export const metadata = {
   title: 'Create Next App',
