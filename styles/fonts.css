@@ -1,0 +1,54 @@
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 100;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-Thin.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-ExtraLight.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 300;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-Light.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 400;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-Regular.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-Medium.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 600;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-SemiBold.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 700;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-Bold.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 800;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-ExtraBold.ttf'); /* IE9 Compat Modes */
+}
+@font-face {
+    font-family: 'Raleway';
+    font-weight: 900;
+    font-style: normal;
+    src: url('../public/fonts/raleway/Raleway-Black.ttf'); /* IE9 Compat Modes */
+}

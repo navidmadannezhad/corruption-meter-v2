@@ -1,7 +1,7 @@
 'use client'
 
-import { ResultType } from "@customTypes/types";
-import { LatLngExpression } from "leaflet";
+import { ranked_color } from "@utils/utils";
+import { FeatureGroup, LatLngExpression, Layer } from "leaflet";
 import { MapContainer,
      TileLayer,
      GeoJSON
@@ -9,7 +9,6 @@ import { MapContainer,
 
 type Props = {
     geojsonData: any;
-    corruptionData: ResultType;
 }
 
 const mapOptions = {
@@ -29,10 +28,27 @@ const mapOptions = {
 const tileURL = "https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibmF2aWRtbnpoMTExIiwiYSI6ImNsMTdsYTRsNzE1bHgzZGthMWppNTdscTkifQ.cimHgKp_fzMY5v5roiDaOA";
 
 const Map = ({ geojsonData }: Props) => {
+    const onEachFeature: any = (feature: FeatureGroup, layer: Layer) => {
+        layer.on({
+            click: (e) => {
+                console.log(e.target.feature)
+            },
+        })
+    }
+
+    const featureStyle = (feature: any) => {
+        return {
+            color: ranked_color(feature.properties.corruption_data.rank),
+            fillColor: ranked_color(feature.properties.corruption_data.rank),
+            weight: 2,
+            fillOpacity: 0.5
+        }
+    }
+
     return(
         <MapContainer { ...mapOptions }>
             <TileLayer url={tileURL} />
-            <GeoJSON data={geojsonData} />
+            <GeoJSON data={geojsonData} onEachFeature={onEachFeature} style={featureStyle as any} />
         </MapContainer>
     )
 }

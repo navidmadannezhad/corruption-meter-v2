@@ -1,3 +1,56 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("fonts.css");
+
+@layer components{
+    .font-raleway-thin{
+        font-family: "Raleway";
+        font-weight: 100;
+    }
+    .font-raleway-extralight{
+        font-family: "Raleway";
+        font-weight: 200;
+    }
+    .font-raleway-light{
+        font-family: "Raleway";
+        font-weight: 300;
+    }
+    .font-raleway-regular{
+        font-family: "Raleway";
+        font-weight: 400;
+    }
+    .font-raleway-medium{
+        font-family: "Raleway";
+        font-weight: 500;
+    }
+    .font-raleway-semibold{
+        font-family: "Raleway";
+        font-weight: 600;
+    }
+    .font-raleway-bold{
+        font-family: "Raleway";
+        font-weight: 700;
+    }
+    .font-raleway-extrabold{
+        font-family: "Raleway";
+        font-weight: 800;
+    }
+    .font-raleway-black{
+        font-family: "Raleway";
+        font-weight: 900;
+    }
+    .bottom-ranks{
+        background: radial-gradient(rgba(238, 88, 88, 0.2) 5%, rgba(238, 88, 88, 0) 70%);
+    }
+    .top-ranks{
+        background: radial-gradient(rgba(88, 238, 158, 0.2) 5%, rgba(88, 238, 158, 0) 70%);
+    }
+}
+
+@layer base{
+    *{
+        @apply font-raleway-medium;
+    }
+}

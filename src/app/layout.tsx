@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import "@styles/globals.css"
 import 'leaflet/dist/leaflet.css';
+import ReduxProvider from "@components/ReduxProvider";
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,7 +16,11 @@ const RootLayout = ({ children }: Props) => {
   return (
     <html lang="en">
       <body>
-        {children}
+
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
+
       </body>
     </html>
   )

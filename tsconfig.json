@@ -26,6 +26,7 @@
       "@styles/*": ["./styles/*"],
       "@customTypes/*": ["./src/types/*"],
       "@actions/*": ["./src/actions/*"],
+      "@redux/*": ["./src/redux/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
