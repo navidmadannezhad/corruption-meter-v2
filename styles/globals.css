@@ -53,4 +53,7 @@
     *{
         @apply font-raleway-medium;
     }
+    g path{
+        transition: all 0.1s;
+    }
 }

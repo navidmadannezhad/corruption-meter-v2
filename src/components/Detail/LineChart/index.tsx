@@ -1,7 +1,7 @@
 'use client'
 
 import { Chart as ChartJS, registerables } from "chart.js";
-import { Line } from "react-chartjs-2";
+import { Chart } from "react-chartjs-2";
 
 interface Props{
     xData: any;
@@ -9,7 +9,7 @@ interface Props{
     color: string;
 }
 
-const Chart = ({ xData, yData, color }: Props) => {
+const LineChart = ({ xData, yData, color }: Props) => {
     ChartJS.register(...registerables);
 
     const chartData = {
@@ -34,8 +34,8 @@ const Chart = ({ xData, yData, color }: Props) => {
     }
 
     return(
-        <Line data={chartData} options={options} />
+        <Chart type="line" data={chartData} options={options} />
     )
 }
 
-export default Chart;
+export default LineChart;
