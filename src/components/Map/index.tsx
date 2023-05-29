@@ -8,7 +8,9 @@ import { MapContainer,
      GeoJSON
 } from "react-leaflet";
 import { useDispatch } from "react-redux";
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import useBreakPoint from "@hooks/useBreakPoint";
+import PopupResolver from "@components/PopupResolver";
 
 type Props = {
     geojsonData: any;
@@ -33,14 +35,19 @@ const tileURL = "https://api.mapbox.com/styles/v1/mapbox/dark-v10/tiles/{z}/{x}/
 const Map = ({ geojsonData }: Props) => {
     const dispatch = useDispatch();
     const map = useRef(null);
+    const isMobile = useBreakPoint(1278);
+    const [markerPosition, setMarkerPosition] = useState<LatLngExpression>([0,0])
 
     const onEachFeature: any = (feature: FeatureGroup, layer: Layer) => {
         layer.on({
             click: (e) => {
-                // if(map){
-                //     map.current.fitBounds(e.target.getBounds())
-                // }
                 dispatch(loadDetail(e.target.feature.properties.corruption_data))
+                if(isMobile){
+                    setMarkerPosition([
+                        e.latlng.lat,
+                        e.latlng.lng
+                    ])
+                }
             },
             mouseover: (e) => {
                 e.target.setStyle({
@@ -65,9 +72,14 @@ const Map = ({ geojsonData }: Props) => {
     }
 
     return(
-        <MapContainer ref={map} { ...mapOptions }>
+        <MapContainer whenReady={((e: any) => {map.current = e.target}) as any} { ...mapOptions }>
             <TileLayer url={tileURL} />
             <GeoJSON data={geojsonData} onEachFeature={onEachFeature} style={featureStyle as any} />
+
+            {isMobile ? (
+                <PopupResolver position={markerPosition} />
+            ) : null}
+
         </MapContainer>
     )
 }

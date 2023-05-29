@@ -57,3 +57,8 @@
         transition: all 0.1s;
     }
 }
+
+.leaflet-popup-content-wrapper{
+    height: 300px !important;
+    width: 200px !important;
+}

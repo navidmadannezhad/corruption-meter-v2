@@ -2,6 +2,7 @@
 
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Chart } from "react-chartjs-2";
+import useBreakPoint from "@hooks/useBreakPoint";
 
 interface Props{
     xData: any;
@@ -11,6 +12,7 @@ interface Props{
 
 const LineChart = ({ xData, yData, color }: Props) => {
     ChartJS.register(...registerables);
+    const isMobile = useBreakPoint(1278);
 
     const chartData = {
         labels: yData,
@@ -26,6 +28,7 @@ const LineChart = ({ xData, yData, color }: Props) => {
 
     const options = {
         responsive: true,
+        maintainAspectRatio: !isMobile,
         plugins: {
             legend: {
                 display: false,
@@ -34,7 +37,7 @@ const LineChart = ({ xData, yData, color }: Props) => {
     }
 
     return(
-        <Chart type="line" data={chartData} options={options} />
+        <Chart type="line" data={chartData} options={options} height={150} />
     )
 }
 

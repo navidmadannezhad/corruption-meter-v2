@@ -4,16 +4,11 @@ import { useSelector } from "react-redux";
 import LineChart from "./LineChart";
 import { ranked_color } from "@utils/utils";
 import { CircleLoader } from "react-spinners";
-import { useEffect } from "react";
 
 const Detail = () => {
     const countryDetail = useSelector((state: any) => state.corruption.data)
     const detailLoaded = useSelector((state: any) => state.corruption.loaded);
     const country_color = ranked_color(countryDetail.rank);
-
-    useEffect(() => {
-        console.log(detailLoaded)
-    }, [detailLoaded])
 
     return(
         <div className="w-full">
