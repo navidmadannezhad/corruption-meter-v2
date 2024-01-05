@@ -13,7 +13,7 @@ const SimpleStatistics = ({ corruption_data }: Props) => {
             <div className="top-ranks">
                 <p className="font-raleway-bold text-sm mb-3">Least Corrupt</p>
                 {top_ranks && top_ranks.map((rank: any, i: number) => (
-                    <div className="flex items-center my-1">
+                    <div className="flex items-center my-1" key={i}>
                         <span className="text-sm mx-1">{rank.rank}</span>
                         <img src={`http://${rank.flag_url}`} alt={rank.country_name} className="w-[20px] mx-2" />
                         <span className="text-sm mx-1">{rank.country_name}</span>
@@ -23,7 +23,7 @@ const SimpleStatistics = ({ corruption_data }: Props) => {
             <div className="bottom-ranks">
                 <p className="font-raleway-bold text-sm mb-3">Most Corrupt</p>
                 {bottom_ranks && bottom_ranks.map((rank: any, i: number) => (
-                    <div className="flex items-center my-1">
+                    <div className="flex items-center my-1" key={i}>
                         <span className="text-sm mx-1">{rank.rank}</span>
                         <img src={`http://${rank.flag_url}`} alt={rank.country_name} className="w-[20px] mx-2" />
                         <span className="text-sm mx-1">{rank.country_name}</span>

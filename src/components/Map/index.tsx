@@ -2,15 +2,15 @@
 
 import { loadDetail } from "@redux/corruptionSlice";
 import { ranked_color } from "@utils/utils";
-import { FeatureGroup, LatLngExpression, Layer } from "leaflet";
 import { MapContainer,
      TileLayer,
      GeoJSON
 } from "react-leaflet";
 import { useDispatch } from "react-redux";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import useBreakPoint from "@hooks/useBreakPoint";
 import PopupResolver from "@components/PopupResolver";
+import { FeatureGroup, LatLngExpression, Layer } from "leaflet";
 
 type Props = {
     geojsonData: any;

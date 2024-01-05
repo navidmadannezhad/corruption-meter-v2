@@ -2,10 +2,11 @@ import { getCorruptionData } from "@actions/corruption";
 import { getGeoJSONData } from "@actions/corruption";
 import { ResultType } from "@customTypes/types";
 import DesktopMenu from "@components/DesktopMenu";
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 import { ranked_geojson } from "@utils/utils";
+import Map from "@components/Map";
 
-const Map = dynamic(() => import("@components/Map"), { ssr: false })
+// const Map = dynamic(() => import("@components/Map"), { ssr: false })
 
 const Home = async () => {
     const corruption_res = await getCorruptionData();
@@ -27,5 +28,5 @@ const Home = async () => {
         </div>
     )
 }
-
+export const dynamic = 'force-dynamic';
 export default Home;

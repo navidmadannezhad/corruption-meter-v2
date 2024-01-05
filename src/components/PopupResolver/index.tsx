@@ -3,9 +3,8 @@ import Detail from "@components/Detail"
 import { LatLngExpression } from "leaflet";
 import { useEffect, useRef } from "react";
 import "leaflet/dist/images/marker-shadow.png";
-import { Marker as MarkerType } from "leaflet";
 import { useSelector } from "react-redux";
-import { icon } from "leaflet";
+import { icon, Marker as MarkerType } from "leaflet";
 
 interface Props{
     position: LatLngExpression;
