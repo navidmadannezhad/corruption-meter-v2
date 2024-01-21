@@ -24,7 +24,7 @@ const mapOptions = {
         [-90, -180],
         [90, 180]
     ] as any,
-    minZoom: 3,
+    minZoom: 2,
     maxZoom: 5,
     scrollWheelZoom: true,
     style: { width: "100%", height: "100vh" }
@@ -47,6 +47,13 @@ const Map = ({ geojsonData }: Props) => {
                         e.latlng.lat,
                         e.latlng.lng
                     ])
+                    e.target._map.flyTo([
+                        e.latlng.lat,
+                        e.latlng.lng
+                    ], 3, {
+                        animate: true,
+                        duration: 1
+                    })
                 }
             },
             mouseover: (e) => {
@@ -80,6 +87,11 @@ const Map = ({ geojsonData }: Props) => {
                 <PopupResolver position={markerPosition} />
             ) : null}
 
+            {isMobile ? (
+                <div className="absolute bottom-0 text-xs z-[9999]">
+                    done by <a className="mx-1" href="https://www.linkedin.com/in/navidmnzh/" target="_blank">navidmnzh</a>
+                </div>
+            ) : null}
         </MapContainer>
     )
 }

@@ -20,6 +20,10 @@ const DesktopMenu = ({ corruption_data }: Props) => {
             <div className="mt-6 w-11/12">
                 <SimpleStatistics corruption_data={corruption_data} />
             </div>
+
+            <div className="absolute bottom-[10px]">
+                Done by navidmnzh
+            </div>
         </div>
     )
 }
